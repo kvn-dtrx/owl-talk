@@ -4,6 +4,10 @@
 
 This repository contains a template for presentation slides. It is based upon the LaTeX class [beamer](https://ctan.org/pkg/beamer) and a reverence to the themes [metropolis](https://github.com/matze/mtheme) and [beamercolortheme-owl](https://github.com/rchurchley/beamercolortheme-owl).
 
+## Template Preview
+
+Precompiled PDF versions of this template are provided in the **[Releases](https://github.com/kvn-dtrx/owl-talk/releases)** section for your convenience. Alternatively, after downloading the repository (see below), you may navigate to the `examples/` subdirectory and run `latexmk`.
+
 ## Installation
 
 ### Requirements
@@ -24,6 +28,19 @@ Any recent TeXLive distribution ($\geq 2020$) ought to be capable of compiling t
    ``` shell
    make -n <target>
    ```
+
+## Usage
+
+You may specify the document class in your TeX source file as follows:
+
+``` tex
+\documentclass[ 
+   mode={<mode>},%
+   accentcolor={<colour>},%
+]{owl-talk}
+```
+
+In this snippet, `<mode>` should be either light or dark, and `<colour>` should be an xcolor-compatible colour name defined in the preamble.
 
 ## Colophon
 

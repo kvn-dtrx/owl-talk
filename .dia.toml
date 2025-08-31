@@ -5,3 +5,7 @@ target = ".gitignore"
 [[latexmkrc]]
 sources = ["base.pl", "lualatex.pl"]
 target = "examples/.latexmkrc"
+
+[[license]]
+sources = ["mit.txt"]
+target = "license.txt"
