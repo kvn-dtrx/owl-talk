@@ -1,5 +1,7 @@
 # Owl Talk
 
+**NOTE:** Precompiled PDF versions of this template are provided in the **[Releases](https://github.com/kvn-dtrx/owl-talk/releases)** section for your convenience.
+
 ## Synopsis
 
 This repository contains a template for presentation slides. It is based upon the LaTeX class [beamer](https://ctan.org/pkg/beamer) and a reverence to the themes [metropolis](https://github.com/matze/mtheme) and [beamercolortheme-owl](https://github.com/rchurchley/beamercolortheme-owl).
