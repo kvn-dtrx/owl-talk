@@ -1,0 +1,189 @@
+\section{Grundlegendes}
+
+\begin{frame}{Listen-Umgebungen}
+    Eine \texttt{itemize}-Umgebung:
+    \begin{itemize}
+        \item Erster Punkt.
+        \item Zweiter Punkt.
+              \begin{itemize}
+                  \item Erster Unterpunkt des zweiten Punktes.
+              \end{itemize}
+    \end{itemize}
+
+    Eine \texttt{enumerate}-Umgebung:
+
+    \begin{enumerate}
+        \item Erster Punkt
+              \begin{enumerate}
+                  \item Erster Unterpunkt des ersten Punktes.
+              \end{enumerate}
+        \item Zweiter Punkt.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Zentrierter Text}
+    Eine zentrierte, vielleicht auch zentrale Aussage:
+    \begin{center}
+        Ein Subjekt genau dann, wenn ein Objekt.
+    \end{center}
+    \pause\par%
+    Nun die Fortsetzung nach der Digestation dieser tiefliegenden Aussage.
+\end{frame}
+
+\begin{frame}{Zweispaltiges Layout}
+    Zweispaltig – aber nicht zwiespältig:
+    \par{}~%
+    \begin{columns}
+        % How is exact alignment achievable at this point?
+        \column[t]{0.485\textwidth} Das Subjekt \dots
+        \column[t]{0.485\textwidth} \dots und das Objekt.
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Sukzessives Aufdecken}
+    Die vier Wurzeln des Satzes vom Grunde lauten:
+    \begin{itemize}[<+->]
+        \item Werden
+        \item Erkennen
+        \item Anschauen
+        \item Wollen
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Zitat -- Kant im englischen Original}
+    \begin{verse}
+        As any dedicated reader can clearly see, the Ideal of practical reason is a representation of, as far as I know, the things in themselves; as I have shown elsewhere, the phenomena should only be used as a canon for our understanding.
+
+        \hspace*\fill{\hspace*\fill{\small\normalfont---~Immanuel~Kant~(*1724, †1804), deutscher Philosoph}}
+    \end{verse}
+\end{frame}
+\begingroup
+\usebackgroundtemplate{%
+    \includegraphics[
+        width={\paperwidth},
+        height={\paperheight},
+    ]{example-image-empty}
+}
+\begin{frame}{Veränderter Hintergrund}
+    Eine Folie mit verändertem Hintergrund.
+\end{frame}
+\endgroup
+
+\section{Mathematisches}
+
+\begin{frame}{Symbolreichtum}
+
+    Lateinisch kann jeder \ldots
+
+    \newfontface\greekfont{Gentium}
+    Griechisch: {\greekfont α β γ δ ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω}
+
+    \newfontface\hebrewfont{Libertinus Serif}
+    Hebräisch: {\hebrewfont א ב ג ד ה ו ז ח ט י כ ל מ נ ס ע פ צ ק ר ש ת}
+
+    \newfontface\cyrillicfont{FreeSerif}
+    Kyrillisch: {\cyrillicfont а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я}
+
+    Mathematisch: $\displaystyle{ \int, \sum, \prod, \coprod, \biguplus }$
+\end{frame}
+
+\begin{frame}{Gleichungen}
+    Eine einfache Gleichung:
+
+    \begin{equation*}
+        a^2 + b^2 = c^2
+    \end{equation*}
+
+    Eine einfache Gleichung mit Tag:
+
+    \begin{equation}\tag{\ensuremath{\star}}
+        \mathbf 1_{\{i\}}(j) = \delta_{ij}
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Mehrzeilige Rechnung}
+    Eine Rechnung über mehrere Zeilen:
+    \begin{align*}
+        \onslide<2->{
+            \alpha x^2 + \beta x
+         & = \alpha \Biggl( x^2 + \frac{\beta}{\alpha} x \Biggr)
+        \\ }
+        \onslide<3->{
+         & = \alpha \Biggl( x^2 + 2 \frac{\beta}{2\alpha} x + \left( \frac{\beta}{2\alpha} \right)^2 \Biggr) - \alpha \left( \frac{\beta}{2\alpha} \right)^2
+        \\ }
+        \onslide<4->{
+         & = \alpha \Biggl( x + \frac{\beta}{2\alpha} \Biggr)^2 - \frac{\beta^2}{4\alpha}
+        }
+    \end{align*}
+\end{frame}
+
+\begin{frame}{Definition mit Warnung}
+    \begin{mathblock}{Grenzwert einer Folge}
+        \begin{description}
+            \item [Prem.] $x = (x_n)_{n} \in \mathbb R^\mathbb N$.
+
+            \item [Obs.] Es gibt höchstens ein $x_\infty \in \mathbb R$ mit
+                  \begin{equation*}
+                      \forall_\epsilon(\epsilon>0) \exists_{N = N(\epsilon)} (N \in \mathbb N) \forall_n (n \in \mathbb N, n \geq N): \| x_n - x_\infty \| < \epsilon.
+                  \end{equation*}
+            \item [Def.] Im Existenzfalle heißt $x_\infty$ der Grenzwert der Folge $x$.
+        \end{description}
+    \end{mathblock}
+    \pause%
+    \begin{alertblock}{Eine Warnung}
+        Die entsprechende Aussage gilt nicht notwendig für nicht-Hausdorffsche topologische Räume!
+    \end{alertblock}
+\end{frame}
+
+\begin{frame}{Ein Satz mit (schrittweisem) Beweis}
+    \begin{mathblock}{Ein wichtiger Satz}
+        Es gilt: Ein Subjekt genau dann, wenn ein Objekt.
+    \end{mathblock}
+    \pause%
+    \begin{proof} \par
+        {\bfseries Schritt 1:} Trivial.
+        \par\pause%
+        {\bfseries Schritt 2:} Ausgelassen, zu technisch für eine Folie.
+        \par\pause%
+        {\bfseries Schritt 3:} Unmittelbar aus dem ersten und zweiten Schritt.
+    \end{proof}
+\end{frame}
+
+\section{Sonstiges}
+
+\begin{frame}{Speaker Notes}{}
+    Die Magie dieser Folie \ldots
+    \par{}~\pause%
+    \ldots kennt zunächst einmal nur der Quelltext.
+    \note{So wie beispielsweise diese Anmerkung.}
+\end{frame}
+
+\section[\ldots Titel in der Kopfleiste]{Titel im Inhaltsverzeichnis \ldots}
+
+\begin{frame}{Titeländerung}{}
+    Die Abschnittstitel können für das Inhaltsverzeichnis und die Kopfleiste separat gesetzt werden.
+\end{frame}
+
+% Endmarkierende Folie
+
+\begin{standoutframe}
+    \begin{center}
+        {\color{accentcolor}\fontsize{60}{60}\selectfont ω}
+    \end{center}
+\end{standoutframe}
+
+\appendix
+
+\begin{frame}{Das Ende?}
+    Geht es nach dem Ende vielleicht weiter? Aber dann wäre es doch nicht das Ende!
+\end{frame}
+
+\begin{frame}{Literatur}
+    \begin{thebibliography}{16}
+        \bibitemonline{Agerius2025}[Agerius2025] \textsc{Aulus Agerius}: \url{https://example.org/infinite-scrolling} (zuletzt gestern abgerufen)
+
+        \bibitembook{Maevius1732}[Maevius1732] \textsc{Publius Maevius}: \textit{De Arte Nihili}, Imaginaria Press (1732)
+
+        \bibitemarticle{Titius1901}[Titius1901] \textsc{Lucius Titius}: \textit{On the Metaphysical Weight of Shadows at Noon}, Journal of Speculative Studies 42 (1901)
+    \end{thebibliography}
+\end{frame}
