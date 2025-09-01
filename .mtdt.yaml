@@ -1,0 +1,7 @@
+project:
+  name: Owl Talk
+  description: A LaTeX Beamer Template
+  github: https://github.com/kvn-dtrx/owl-talk
+  authors:
+    - name: Kvn Dtrx
+      mail: kvn.dtrx+git@protonmail.ch
