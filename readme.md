@@ -34,7 +34,7 @@ Any recent TeXLive distribution ($\geq 2020$) ought to be capable of compiling t
 You may specify the document class in your TeX source file as follows:
 
 ``` tex
-\documentclass[ 
+\documentclass[
    mode={<mode>},%
    accentcolor={<colour>},%
 ]{owl-talk}
