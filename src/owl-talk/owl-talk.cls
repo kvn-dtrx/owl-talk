@@ -387,7 +387,7 @@
 % Math
 
 % Places equation tags to the left hand side
-% ENIGMA The following high-level alternatives do not work:
+% ENIGMA: The following high-level alternatives do not work:
 % - Passing leqno to beamer from the wrapper class.
 % - Calling the wrapper class with leqno.
 \tagsleft@true
