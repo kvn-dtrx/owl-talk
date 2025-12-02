@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 \ProvidesClass{owl-talk}[%
-    1970/01/01 v0.0-dev A Custom LaTeX Beamer Template.
+  1970/01/01 v0.0-dev A Custom LaTeX Beamer Template.
 ]
 
 % For some inspiration on how to design a Beamer theme, one may consult:
@@ -25,12 +25,12 @@
 
 \keys_define:nn { owl }
 {
-    mode .choice:,
-    mode / dark .code:n = { \tl_gset:Nn \g__owl_mode_tl { dark } },
-    mode / light .code:n = { \tl_gset:Nn \g__owl_mode_tl { light } },
-    mode .initial:n = dark,
-    accentcolor .tl_set:N = \g__owl_accent_color_tl,
-    accentcolor .initial:n = {OwlRed},
+  mode .choice:,
+  mode / dark .code:n = { \tl_gset:Nn \g__owl_mode_tl { dark } },
+  mode / light .code:n = { \tl_gset:Nn \g__owl_mode_tl { light } },
+  mode .initial:n = dark,
+  accentcolor .tl_set:N = \g__owl_accent_color_tl,
+  accentcolor .initial:n = {OwlRed},
 }
 
 \ExplSyntaxOff
@@ -50,7 +50,7 @@
 \definecolor{accentcolor}{rgb}{0.5, 0.5, 0.5}
 \ExplSyntaxOn
 \AtBeginDocument{
-    \colorlet{accentcolor}{\g__owl_accent_color_tl}
+  \colorlet{accentcolor}{\g__owl_accent_color_tl}
 }
 \ExplSyntaxOff
 
@@ -79,19 +79,19 @@
 \let\oldappendix\appendix
 \let\olddocument\document
 \renewcommand{\document}{%
-    \olddocument%
-    \renewcommand{\appendix}{%
-        % Disables new bookmarks temporarily.
-        \hypersetup{bookmarksdepth=0}
-        \oldappendix
-        % Restores the bookmark depth for subsequent sections.
-        \hypersetup{bookmarksdepth=2}
-        % Restores the old bookmark setting.
-        \setcounter{framenumber}{0}
-        \renewcommand*{\insertframenumber}{\Alph{framenumber}}
-        \setbeamertemplate{page number in head/foot}[framenumber]
-        \section*{Appendix}
-    }
+  \olddocument%
+  \renewcommand{\appendix}{%
+    % Disables new bookmarks temporarily.
+    \hypersetup{bookmarksdepth=0}
+    \oldappendix
+    % Restores the bookmark depth for subsequent sections.
+    \hypersetup{bookmarksdepth=2}
+    % Restores the old bookmark setting.
+    \setcounter{framenumber}{0}
+    \renewcommand*{\insertframenumber}{\Alph{framenumber}}
+    \setbeamertemplate{page number in head/foot}[framenumber]
+    \section*{Appendix}
+  }
 }
 
 % Loads the Metropolis theme.
@@ -101,8 +101,8 @@
 \ExplSyntaxOn
 \str_case:VnF \g__owl_mode_tl
 {
-    { dark }  { \usecolortheme{owl} }
-        { light } { \usecolortheme[snowy]{owl} }
+  { dark }  { \usecolortheme{owl} }
+    { light } { \usecolortheme[snowy]{owl} }
 }
 { }
 \ExplSyntaxOff
@@ -112,33 +112,33 @@
 % Template Customisations
 
 \setbeamertemplate{enumerate item}{%
-    \color{accentcolor}\arabic{enumi}.%
+  \color{accentcolor}\arabic{enumi}.%
 }
 
 \setbeamertemplate{enumerate subitem}{%
-    \color{accentcolor}\normalfont\roman{enumii}.%
+  \color{accentcolor}\normalfont\roman{enumii}.%
 }
 
 \setbeamertemplate{itemize item}{%
-    \color{accentcolor}\ensuremath{\star}%
+  \color{accentcolor}\ensuremath{\star}%
 }
 
 \setbeamertemplate{itemize subitem}{%
-    \color{accentcolor}\ensuremath{\bullet}%
+  \color{accentcolor}\ensuremath{\bullet}%
 }
 
 \setbeamertemplate{description item}{%
-    \scshape\insertdescriptionitem%
+  \scshape\insertdescriptionitem%
 }
 
 \setbeamertemplate{qed symbol}{%
-    \ensuremath{\square}%
+  \ensuremath{\square}%
 }
 
 \setbeamertemplate{section in toc}{%
-    \makebox[3em][r]{%
-        {\color{accentcolor}\@Roman\inserttocsectionnumber.}%
-    }~\inserttocsection%
+  \makebox[3em][r]{%
+    {\color{accentcolor}\@Roman\inserttocsectionnumber.}%
+  }~\inserttocsection%
 }
 
 \setbeamertemplate{page number in head/foot}[totalframenumber]
@@ -147,107 +147,107 @@
 % \setbeamertemplate{navigation symbols}{}
 
 \defbeamertemplate{headline}{infolines theme}{%
-    \leavevmode%
-    \hbox{%
-        \begin{beamercolorbox}[
-                wd={1.0\paperwidth},
-                ht={2.65ex},
-                dp={1.5ex},
-                left,
-            ]{section in head/foot}
-            \usebeamerfont{section in head/foot}%
-            \hspace{1.5em}%
-            \insertsectionhead%
-            \hspace*{1em}%
-        \end{beamercolorbox}%
-    }%
-    {\color{accentcolor}\hrule}%
-    \vspace{0ex}%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[
+        wd={1.0\paperwidth},
+        ht={2.65ex},
+        dp={1.5ex},
+        left,
+      ]{section in head/foot}
+      \usebeamerfont{section in head/foot}%
+      \hspace{1.5em}%
+      \insertsectionhead%
+      \hspace*{1em}%
+    \end{beamercolorbox}%
+  }%
+  {\color{accentcolor}\hrule}%
+  \vspace{0ex}%
 }
 
 \defbeamertemplate*{frametitle}{infolines theme}
 {%
-    \vskip 1ex
-    \begin{beamercolorbox}[left]{frame title}%
-        \insertframetitle\\%
-        \usebeamercolor[fg]{framesubtitle}%
-        \usebeamerfont{framesubtitle}%
-        \insertframesubtitle%
-    \end{beamercolorbox}%
+  \vskip 1ex
+  \begin{beamercolorbox}[left]{frame title}%
+    \insertframetitle\\%
+    \usebeamercolor[fg]{framesubtitle}%
+    \usebeamerfont{framesubtitle}%
+    \insertframesubtitle%
+  \end{beamercolorbox}%
 }
 
 \defbeamertemplate{footline}{infolines theme}{%
-    \leavevmode%
-    {\color{accentcolor} \hrule}%
-    \hbox{%
-        \begin{beamercolorbox}[
-                wd={.333333\paperwidth},
-                ht={2.25ex},
-                dp={1ex},
-                left,
-            ]{author in head/foot}%
-            \usebeamerfont{author in head/foot}\hspace*{4ex}%
-            \insertshortauthor%
-            \expandafter\ifblank\expandafter{\beamer@shortinstitute}{%
-            }{%
-            ~~[\insertshortinstitute]%
-            }
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[
-                wd={.333333\paperwidth},
-                ht={2.25ex},
-                dp={1ex},
-                center
-            ]{title in head/foot}%
-            \usebeamerfont{title in head/foot}%
-            \insertshorttitle%
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[
-                wd={.333333\paperwidth},
-                ht={2.25ex},
-                dp={1ex},
-                right,
-            ]{date in head/foot}%
-            \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
-            % Puts page number into a box –
-            % visually more appealing if font is not monospaced.
-            \makebox[2em][r]{%
-                \usebeamertemplate{page number in head/foot}%
-            }%
-            \hspace*{1.5em}
-        \end{beamercolorbox}}%
-    \vspace{0ex}%
+  \leavevmode%
+  {\color{accentcolor} \hrule}%
+  \hbox{%
+    \begin{beamercolorbox}[
+        wd={.333333\paperwidth},
+        ht={2.25ex},
+        dp={1ex},
+        left,
+      ]{author in head/foot}%
+      \usebeamerfont{author in head/foot}\hspace*{4ex}%
+      \insertshortauthor%
+      \expandafter\ifblank\expandafter{\beamer@shortinstitute}{%
+      }{%
+      ~~[\insertshortinstitute]%
+      }
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[
+        wd={.333333\paperwidth},
+        ht={2.25ex},
+        dp={1ex},
+        center
+      ]{title in head/foot}%
+      \usebeamerfont{title in head/foot}%
+      \insertshorttitle%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[
+        wd={.333333\paperwidth},
+        ht={2.25ex},
+        dp={1ex},
+        right,
+      ]{date in head/foot}%
+      \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+      % Puts page number into a box –
+      % visually more appealing if font is not monospaced.
+      \makebox[2em][r]{%
+        \usebeamertemplate{page number in head/foot}%
+      }%
+      \hspace*{1.5em}
+    \end{beamercolorbox}}%
+  \vspace{0ex}%
 }
 
 \defbeamertemplate{footline}{reduced infolines theme}{%
-    \leavevmode%
-    {\color{accentcolor} \hrule}%
-    \hbox{%
-        \begin{beamercolorbox}[
-                wd={.499999\paperwidth},
-                ht={2.25ex},
-                dp={1ex},
-                left,
-            ]{author in head/foot}%
-            \hspace*{1.5em}%
-            \usebeamerfont{title in head/foot}%
-            \insertshorttitle%
-        \end{beamercolorbox}%
-        \begin{beamercolorbox}[
-                wd={.499999\paperwidth},
-                ht={2.25ex},
-                dp={1ex},
-                right,
-            ]{date in head/foot}%
-            \usebeamerfont{date in head/foot}
-            % Puts page number into a box –
-            % visually more appealing if font is not monospaced.
-            \makebox[2em][r]{%
-                \usebeamertemplate{page number in head/foot}%
-            }%
-            \hspace*{1.5em}%
-        \end{beamercolorbox}}%
-    \vspace{0ex}%
+  \leavevmode%
+  {\color{accentcolor} \hrule}%
+  \hbox{%
+    \begin{beamercolorbox}[
+        wd={.499999\paperwidth},
+        ht={2.25ex},
+        dp={1ex},
+        left,
+      ]{author in head/foot}%
+      \hspace*{1.5em}%
+      \usebeamerfont{title in head/foot}%
+      \insertshorttitle%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[
+        wd={.499999\paperwidth},
+        ht={2.25ex},
+        dp={1ex},
+        right,
+      ]{date in head/foot}%
+      \usebeamerfont{date in head/foot}
+      % Puts page number into a box –
+      % visually more appealing if font is not monospaced.
+      \makebox[2em][r]{%
+        \usebeamertemplate{page number in head/foot}%
+      }%
+      \hspace*{1.5em}%
+    \end{beamercolorbox}}%
+  \vspace{0ex}%
 }
 
 \setbeamertemplate{headline}[infolines theme]
@@ -257,8 +257,8 @@
 \setbeamertemplate{frametitle}[infolines theme]
 
 \setbeamersize{
-    text margin left={1em},
-    text margin right={1em},
+  text margin left={1em},
+  text margin right={1em},
 }
 
 % ---
@@ -266,70 +266,70 @@
 % Color Settings
 
 \setbeamercolor{block title}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
-    bg=normal text.bg!90!normal text.fg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
+  bg=normal text.bg!90!normal text.fg,
 }
 
 \setbeamercolor{block body}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
-    bg=normal text.bg!90!normal text.fg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
+  bg=normal text.bg!90!normal text.fg,
 }
 
 \setbeamercolor{alerted text}{
-    fg=accentcolor,
+  fg=accentcolor,
 }
 
 \setbeamercolor{example text}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
 }
 
 \setbeamercolor{author}{
-    fg=accentcolor,
+  fg=accentcolor,
 }
 
 \setbeamercolor{author in head/foot}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
-    bg=normal text.bg!100!normal text.fg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
+  bg=normal text.bg!100!normal text.fg,
 }
 
 \setbeamercolor{title in head/foot}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
-    bg=normal text.bg!100!normal text.fg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
+  bg=normal text.bg!100!normal text.fg,
 }
 
 \setbeamercolor{date in head/foot}{
-    use=normal text,
-    fg=accentcolor,
-    bg=normal text.bg!100!normal text.fg,
+  use=normal text,
+  fg=accentcolor,
+  bg=normal text.bg!100!normal text.fg,
 }
 
 %\setbeamercolor{normal text}{}
 
 \setbeamercolor{section in head/foot}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
-    bg=normal text.bg!100!normal text.fg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
+  bg=normal text.bg!100!normal text.fg,
 }
 
 \setbeamercolor{title separator}{
-    fg=accentcolor,
+  fg=accentcolor,
 }
 \setbeamercolor{structure}{
-    use=normal text,
-    fg=normal text.fg!90!normal text.bg,
+  use=normal text,
+  fg=normal text.fg!90!normal text.bg,
 }
 
 \setbeamercolor{qed symbol}{
-    fg=accentcolor,
+  fg=accentcolor,
 }
 
 \setbeamercolor{verse}{
-    fg=accentcolor,
+  fg=accentcolor,
 }
 
 % \setbeamercolor{title}{
@@ -356,30 +356,30 @@
 \setmonofont{Libertinus Mono}[Ligatures=TeX]
 
 \setbeamerfont{frametitle}{
-    shape={\scshape},
+  shape={\scshape},
 }
 
 \setbeamerfont{section in toc}{
-    shape={\scshape},
-    series={\bfseries},
+  shape={\scshape},
+  series={\bfseries},
 }
 
 \setbeamerfont{headline}{
-    shape={\scshape},
+  shape={\scshape},
 }
 
 \setbeamerfont{footline}{
-    shape={\scshape},
+  shape={\scshape},
 }
 
 \setbeamerfont{title}{
-    shape={\scshape},
-    series={\bfseries},
+  shape={\scshape},
+  series={\bfseries},
 }
 
 \setbeamerfont{title in head/foot}{
-    shape={\scshape},
-    series={\bfseries},
+  shape={\scshape},
+  series={\bfseries},
 }
 
 % ---
@@ -402,24 +402,24 @@
 % Environments
 
 \renewenvironment{exampleblock}[1]{
-    \begin{block}
-        {\color{accentcolor}\faLightbulb\enspace\scshape#1}%
-        }{%
-    \end{block}
+  \begin{block}
+    {\color{accentcolor}\faLightbulb\enspace\scshape#1}%
+    }{%
+  \end{block}
 }
 
 \renewenvironment{alertblock}[1]{
-    \begin{block}
-        {\color{accentcolor}\faExclamationTriangle\enspace\scshape#1}%
-        }{%
-    \end{block}
+  \begin{block}
+    {\color{accentcolor}\faExclamationTriangle\enspace\scshape#1}%
+    }{%
+  \end{block}
 }
 
 \newenvironment{mathblock}[1]{
-    \begin{block}
-        {\faCoffee\enspace\scshape#1}%
-        }{%
-    \end{block}
+  \begin{block}
+    {\faCoffee\enspace\scshape#1}%
+    }{%
+  \end{block}
 }
 
 % \renewenvironment{theorem}[1]{
@@ -429,11 +429,11 @@
 % }
 
 \renewenvironment{proof}{
-    {\scshape\bfseries Proof.}%
+  {\scshape\bfseries Proof.}%
 }{%
-    \hfill%
-    \ensuremath{\qedsymbol}%
-    \ignorespacesafterend%
+  \hfill%
+  \ensuremath{\qedsymbol}%
+  \ignorespacesafterend%
 }
 
 % ---
@@ -444,76 +444,76 @@
 % for instance, horizontal lines on the title slide.
 
 \defbeamertemplate{headline}{titleFix}{%
-    \leavevmode%
-    \hbox{%
-        \begin{beamercolorbox}[
-                wd={1.0\paperwidth},
-                ht={2.8ex},
-                dp={1.5ex},
-                left,
-            ]{background canvas}%
-        \end{beamercolorbox}%
-    }%
-    \vspace{0ex}%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[
+        wd={1.0\paperwidth},
+        ht={2.8ex},
+        dp={1.5ex},
+        left,
+      ]{background canvas}%
+    \end{beamercolorbox}%
+  }%
+  \vspace{0ex}%
 }
 
 \defbeamertemplate{headline}{tocFix}{%
-    \leavevmode%
-    \hbox{%
-        \begin{beamercolorbox}[
-                wd={1.0\paperwidth},
-                ht={2.8ex},
-                dp={1.5ex},
-                left,
-            ]{background canvas}%
-        \end{beamercolorbox}%
-    }%
-    {\color{accentcolor}\hrule}%
-    \vspace{0ex}%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[
+        wd={1.0\paperwidth},
+        ht={2.8ex},
+        dp={1.5ex},
+        left,
+      ]{background canvas}%
+    \end{beamercolorbox}%
+  }%
+  {\color{accentcolor}\hrule}%
+  \vspace{0ex}%
 }
 
 % NOTE: This definition is not different titleFix, yet.
 \defbeamertemplate{headline}{standoutFix}{
-    \leavevmode%
-    \hbox{%
-        \begin{beamercolorbox}[
-                wd={1.0\paperwidth},
-                ht={2.8ex},
-                dp={1.5ex},
-                left,
-            ]{background canvas}%
-        \end{beamercolorbox}%
-    }%
-    \vspace{0ex}%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[
+        wd={1.0\paperwidth},
+        ht={2.8ex},
+        dp={1.5ex},
+        left,
+      ]{background canvas}%
+    \end{beamercolorbox}%
+  }%
+  \vspace{0ex}%
 }
 
 % Inserts a ToC slide at the beginning of each section.
 \AtBeginSection[]{{
-            \setbeamertemplate{headline}[tocFix]%
-            \frame{\tableofcontents[currentsection]}%
-        }}
+      \setbeamertemplate{headline}[tocFix]%
+      \frame{\tableofcontents[currentsection]}%
+    }}
 
 \newcommand{\make@title@page}{%
-    \begingroup
-    \setbeamertemplate{headline}[titleFix]{%
-        \setbeamertemplate{footline}{}%
-        % There will be an overful vbox on the
-        % title page inherited from Metropolis.
-        \frame{\titlepage}%
-    }%
-    \endgroup
+  \begingroup
+  \setbeamertemplate{headline}[titleFix]{%
+    \setbeamertemplate{footline}{}%
+    % There will be an overful vbox on the
+    % title page inherited from Metropolis.
+    \frame{\titlepage}%
+  }%
+  \endgroup
 }
 
 \newcommand{\make@toc}{%
-    \begingroup
-    \setbeamertemplate{headline}[tocFix]%
-    \frame{\tableofcontents}%
-    \endgroup
+  \begingroup
+  \setbeamertemplate{headline}[tocFix]%
+  \frame{\tableofcontents}%
+  \endgroup
 }
 
 \AtBeginDocument{%
-    \make@title@page%
-    \make@toc%
+  \make@title@page%
+  \make@toc%
 }
 
 % Subtraction frome the frame number counter due
@@ -521,25 +521,25 @@
 \addtocounter{framenumber}{-2}
 
 \newenvironment{standoutframe}{%
-    \begingroup
-    \setbeamertemplate{headline}{%
-        \leavevmode%
-        \hbox{%
-            \begin{beamercolorbox}[
-                    wd={1.0\paperwidth},
-                    ht={2.8ex},
-                    dp={1.5ex},
-                    left,
-                ]{background canvas}%
-            \end{beamercolorbox}%
-        }%
-        \vskip 0ex%
+  \begingroup
+  \setbeamertemplate{headline}{%
+    \leavevmode%
+    \hbox{%
+      \begin{beamercolorbox}[
+          wd={1.0\paperwidth},
+          ht={2.8ex},
+          dp={1.5ex},
+          left,
+        ]{background canvas}%
+      \end{beamercolorbox}%
     }%
-    \setbeamertemplate{footline}{}
-    \begin{frame}[standout]%
-        }{%
-    \end{frame}
-    \endgroup
+    \vskip 0ex%
+  }%
+  \setbeamertemplate{footline}{}
+  \begin{frame}[standout]%
+    }{%
+  \end{frame}
+  \endgroup
 }
 
 % ---
@@ -547,16 +547,16 @@
 % References
 
 \newcommand*{\bibitemarticle}{
-    \setbeamertemplate{bibliography item}{\color{accentcolor}\faFile}%
-    \bibitem%
+  \setbeamertemplate{bibliography item}{\color{accentcolor}\faFile}%
+  \bibitem%
 }
 
 \newcommand*{\bibitembook}{
-    \setbeamertemplate{bibliography item}{\color{accentcolor}\faBook}%
-    \bibitem%
+  \setbeamertemplate{bibliography item}{\color{accentcolor}\faBook}%
+  \bibitem%
 }
 
 \newcommand*{\bibitemonline}{
-    \setbeamertemplate{bibliography item}{\color{accentcolor}\faGlobe}%
-    \bibitem%
+  \setbeamertemplate{bibliography item}{\color{accentcolor}\faGlobe}%
+  \bibitem%
 }
