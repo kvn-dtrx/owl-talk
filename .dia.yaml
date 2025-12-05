@@ -3,13 +3,11 @@ gitignore:
       - "base.ignore"
       - "latex.ignore"
     target: ".gitignore"
-
 latexmkrc:
   - sources:
       - "base.pl"
       - "lualatex.pl"
     target: "examples/.latexmkrc"
-
 license:
   - sources:
       - "mit.txt"
