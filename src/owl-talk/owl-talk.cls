@@ -440,7 +440,7 @@
 
 % Title Page, Table of Contents, Standout Frames
 
-% Template corrections in order to avoid some visual artifacts –
+% Template corrections in order to avoid some visual artefacts –
 % for instance, horizontal lines on the title slide.
 
 \defbeamertemplate{headline}{titleFix}{%
