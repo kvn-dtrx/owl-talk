@@ -1,7 +1,13 @@
 project:
+  id: 2ace8d6b-4a67-45f0-9d8e-b2a856d2ffa4
   name: Owl Talk
-  description: A LaTeX Beamer Template
-  github: https://github.com/kvn-dtrx/owl-talk
+  description: >-
+    A LaTeX Beamer Template
   authors:
     - name: Kvn Dtrx
       mail: kvn.dtrx+git@protonmail.ch
+  license: null
+forges:
+  github:
+    url: https://github.com/kvn-dtrx/owl-talk
+    visibility: public
