@@ -15,11 +15,11 @@ build-dir := "build"
 default:
     @just --list --unsorted
 
-# Prepare build directory
+# Prepares build directory
 prepare:
     mkdir -p {{build-dir}}
 
-# Compile examples/demo for dark and light (-jobname)
+# Compiles examples/demo for dark and light (-jobname)
 compile: prepare
     #!/usr/bin/env bash
     for mode in dark light; do
