@@ -4,6 +4,15 @@
     1970/01/01 v0.0-dev A Custom LaTeX Beamer Template.
 ]
 
+% ChkTeX misparses expl3 keys, literal tag brackets, and deliberate nonbreaking space
+% chktex-file 9
+% chktex-file 26
+% chktex-file 39
+
+% iftex – Require LuaLaTeX for Unicode and OpenType support.
+\RequirePackage{iftex}
+\RequireLuaTeX
+
 % For some inspiration on how to design a Beamer theme, one may consult:
 % - [Design a custom Beamer theme from scratch](https://tex.stackexchange.com/questions/146529)
 % - [Make beamer not look like beamer](https://tex.stackexchange.com/questions/158638)
@@ -23,11 +32,23 @@
 \tl_new:N \g__owl_mode_tl
 \tl_new:N \g__owl_accent_color_tl
 
+\cs_new_protected:Npn \__owl_set_mode:n #1
+{
+    \str_case_e:nnF {#1}
+    {
+        { dark } { \tl_gset:Nn \g__owl_mode_tl { dark } }
+            { light } { \tl_gset:Nn \g__owl_mode_tl { light } }
+    }
+    {
+        \ClassError{owl-talk}
+        {Invalid~mode~'#1'}
+        {Choose~mode=dark~or~mode=light.}
+    }
+}
+
 \keys_define:nn { owl }
 {
-    mode .choice:,
-    mode / dark .code:n = { \tl_gset:Nn \g__owl_mode_tl { dark } },
-    mode / light .code:n = { \tl_gset:Nn \g__owl_mode_tl { light } },
+    mode .code:n = \__owl_set_mode:n {#1},
     mode .initial:n = dark,
     accentcolor .tl_set:N = \g__owl_accent_color_tl,
     accentcolor .initial:n = {OwlRed},
@@ -63,8 +84,9 @@
 % mathtools - Mathematical tools to use with amsmath.
 \RequirePackage{mathtools}
 
-% amssymb - Defines all the symbols found in the AMS symbol fonts msam and msbm.
-\RequirePackage{amssymb}
+% unicode-math – OpenType mathematics for LuaLaTeX.
+\RequirePackage{unicode-math}
+\setmathfont{Libertinus Math}
 
 % fontawesome5 – Font Awesome 5 with LATEX support.
 \RequirePackage{fontawesome5}
